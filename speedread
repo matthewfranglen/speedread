@@ -162,11 +162,17 @@ sub process_keys {
 	while ($tty->key_pressed()) {
 		my $ch = $tty->getch();
 		if ($ch eq '[') {
-			$wpm = int($wpm * 0.9);
-
+			if ($wpm > 1) {
+				$wpm = int($wpm * 0.9);
+			} else {
+				$paused = 1;
+			}
 		} elsif ($ch eq ']') {
-			$wpm = int($wpm * 1.1);
-
+			if ($wpm >= 10) {
+				$wpm = int($wpm * 1.1);
+			} else {
+				$wpm += 1;
+			}
 		} elsif ($ch eq ' ') {
 			$paused = not $paused;
 			if ($paused) {
@@ -197,7 +203,7 @@ sub main {
 		my (@words) = grep { /./ } split /(?:-|\s)+/;
 
 		if ($multiword) {
-			# Join adjecent short words
+			# Join adjacent short words
 			for (my $i = 0; $i < $#words - 1; $i++) {
 				if (length($words[$i]) <= 3 and length($words[$i+1]) <= 3) {
 					$words[$i] .= ' ' . $words[$i+1];
