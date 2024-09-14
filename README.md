@@ -3,17 +3,17 @@ speedread
 
 A simple terminal-based open source Spritz-alike.
 
-This command line filter shows input text as a per-word RSVP (rapid serial
-visual presentation) aligned on optimal reading points.  This kind of
-input mode allows reading text at a much more rapid pace than usual as the eye
-can stay fixed on a single place.
+This command line filter shows input text as a per-word RSVP (rapid
+serial visual presentation) aligned on optimal reading points.  This
+kind of input mode allows reading text at a much more rapid pace than
+usual as the eye can stay fixed on a single place.
 
 Basic Example
 -------------
 
 	cat tea.txt | ./speedread -w 250
 
-The default of 250 words per minut is very timid, designed so that you get
+The default of 250 words per minute is very timid, designed so that you get
 used to this.  Be sure to try cranking this up, 500wpm should still be fairly
 easy to follow even for beginners.
 
@@ -58,6 +58,6 @@ Not sure if I will ever get around to these...
     filter philosophy). This would allow better eye guidance and large font.
   * An elinks-based recipe for reading websites this way.
 
-Check out also [OpenSpritz](https://github.com/Miserlou/OpenSpritz) or
+Check out also [OpenSpritz](https://github.com/Miserlou/Glance-Bookmarklet) or
 [spritz-js](https://github.com/richardtagger/spritz-js) if you want to
 get this functionality in the web context.
